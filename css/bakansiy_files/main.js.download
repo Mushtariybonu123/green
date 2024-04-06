@@ -1,0 +1,160 @@
+
+const $body = $('body');
+const $menuOpen = $('.menu-toggle');
+const $menuClose = $('.cancel-btn');
+const $btnSearch = $('.search-toggle');
+$(function () {
+    $menuOpen.click(function () {
+        $body.addClass('menu-open');
+    });
+    $menuClose.click(function () {
+        $body.removeClass('menu-open');
+    });
+
+});
+
+let section_counter = document.querySelector('.counters');
+let counter = document.querySelectorAll('.counter .num');
+
+let speed = 200;
+counter.forEach((counter, index) => {
+  function UpdateCounter() {
+    const targetNumber = +counter.dataset.target;
+    const initialNumber = +counter.innerText;
+    const incPerCount = targetNumber / speed;
+    if (initialNumber < targetNumber) {
+      counter.innerText = Math.ceil(initialNumber + incPerCount);
+      setTimeout(UpdateCounter ,40)
+    }
+  }
+  UpdateCounter();
+});
+
+// SCROLL
+
+let CounterObserver = new IntersectionObserver((entries, observer)=>{
+  let [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+},{
+  root: null,
+  threshold: 0.4,
+});
+
+CounterObserver.observe(counters);
+
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+ScrollSmoother.create({
+  wrapper: '.wrapper',
+  content: '.content',
+  smooth: 1.5,
+  effects: true
+})
+
+gsap.from(".nav__block", {
+  opacity: 0,
+  x: -50,
+  delay: .5,
+  duration: .5
+})
+
+gsap.from(".nav__block-2", {
+  opacity: 0,
+  x: 50,
+  delay: 1,
+  duration: 1
+})
+
+gsap.from(".nav__list", {
+  opacity: 0,
+  x: 50,
+  delay: 1.5,
+  duration: 1.5
+})
+
+gsap.from(".logo", {
+  opacity: 0,
+  x: -50,
+  delay: .5,
+  duration: 1
+})
+
+gsap.from(".push-left", {
+  opacity: 0,
+  x: 50,
+  delay: 1.5,
+  duration: 1
+})
+
+gsap.from(".header__title", {
+  opacity: 0,
+  y: 30,
+  delay: .5,
+  duration: 1
+})
+
+gsap.from(".header__text", {
+  opacity: 0,
+  y: 30,
+  delay: 1,
+  duration: 1
+})
+
+gsap.from(".header__btn-block", {
+  opacity: 0,
+  y: 30,
+  delay: 1.5,
+  duration: 1
+})
+
+gsap.from(".header__img", {
+  opacity: 0,
+  y: -30,
+  delay: 1,
+  duration: 1
+})
+
+gsap.from(".company__content", {
+  scrollTrigger: {
+      trigger: ".company__content",
+      scrub: 1,
+      start: "-20px 90%",
+      end: "top 65%",
+      toggleActions: "restart pause reverse pause",
+  },
+  opacity: 0,
+  x: -200,
+  duration: 3
+});
+
+gsap.from(".company__content-2", {
+  scrollTrigger: {
+      trigger: ".company__content-2",
+      scrub: 1,
+      start: "-20px 90%",
+      end: "top 65%",
+      toggleActions: "restart pause reverse pause",
+  },
+  opacity: 0,
+  x: 200,
+  duration: 3
+});
+
+// NavBar
+
+$(document).ready(function () {
+  // Toggle menu on click
+  $("#menu-toggler").click(function () {
+    toggleBodyClass("menu-active");
+  });
+
+  function toggleBodyClass(className) {
+    document.body.classList.toggle(className);
+  }
+
+});
+
+
+

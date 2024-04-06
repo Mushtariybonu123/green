@@ -1,0 +1,216 @@
+/* Extra */
+.logo {
+  max-width: 200px;
+  z-index: 1;
+}
+
+.logo__img {
+  width: 160px;
+}
+
+@media (max-width: 991px) {
+  .navbar-bottom {
+    background-color: #FFBC28;
+  }
+}
+.navbar-bottom .nav-links {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-bottom .nav-links li {
+  text-transform: uppercase;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+}
+
+.navbar-bottom .nav-links li a {
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+  transition: 0.2s linear;
+}
+@media (max-width: 991px) {
+  .navbar-bottom .nav-links li a {
+    background: #280098;
+  }
+}
+.navbar-bottom .nav-links li a:hover {
+  color: #EBB02D !important;
+  transition: 0.2s linear;
+}
+
+.navbar-bottom .nav-links li:hover > a,
+.navbar-bottom .nav-links li a.active {
+  color: #EBB02D;
+}
+
+.toggler {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  z-index: 101;
+}
+
+.menu-toggle {
+  right: 0;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -12px;
+  display: none;
+}
+
+.cancel-btn {
+  display: none;
+}
+
+.toggler svg {
+  width: 40px;
+  height: 40px;
+  padding-top: 5px;
+  fill: rgb(255, 255, 255);
+  background: #280098;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-bottom .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    display: block;
+    background: #fff;
+    padding: 1rem;
+    padding-top: 50px;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.05), 0 20px 22px rgba(0, 0, 0, 0.05);
+    z-index: 0;
+    transition-delay: 1s;
+    transform: translateX(-30px);
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    visibility: hidden;
+    opacity: 0;
+    overflow-y: hidden;
+  }
+  .menu-open .nav-links {
+    transform: translateX(0px);
+    opacity: 1;
+    z-index: 102;
+    transition-delay: 0.15s;
+    visibility: visible;
+    transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .menu-toggle {
+    display: inline-block;
+    margin-left: 0;
+  }
+  .cancel-btn {
+    display: inline-block;
+    top: 5px;
+    right: 1rem;
+  }
+  .navbar-bottom .nav-links li {
+    display: block;
+    height: auto;
+    margin: 2px 0;
+    color: #5B52F8;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .navbar-bottom .nav-links li a {
+    height: 60px;
+  }
+  .navbar-bottom .nav-links li a:hover,
+  .navbar-bottom .nav-links li a.active {
+    background: #FFBC28;
+    color: #fff;
+  }
+}
+/* Nav Start */
+.nav__block {
+  background: #FFBC28;
+  position: absolute;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 5% 99%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 5% 99%);
+  min-width: 1000px;
+  height: 60px;
+  top: 0;
+  right: 0;
+}
+
+.nav__block-2 {
+  background: #00095A;
+  position: absolute;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 99%);
+          clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 99%);
+  min-width: 900px;
+  height: 100px;
+  top: 0;
+  right: 0;
+}
+
+nav {
+  background-color: #EDEDED;
+  transition: 0.2s linear;
+}
+
+nav.sticky {
+  background-color: white;
+  padding: 0 !important;
+  padding-top: 5px !important;
+  transition: 0.2s linear;
+}
+@media (max-width: 991px) {
+  nav.sticky .navbar-bottom {
+    background-color: #FFBC28;
+  }
+}
+
+.nav__list {
+  position: absolute;
+  top: 30px;
+  right: 20%;
+  list-style: none;
+}
+
+.nav__link {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+@media (max-width: 991px) {
+  .nav__block-2 {
+    background: #FFBC28;
+  }
+}
+.btn-signIn {
+  width: 80px;
+  height: 40px;
+  border: none;
+  margin-right: 10px !important;
+  background-color: #FFBC28;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s linear;
+  z-index: 999999;
+}
+.btn-signIn:hover {
+  background: white;
+  color: black;
+  transition: 0.3s linear;
+}
+
+/* Nav End *//*# sourceMappingURL=nav.css.map */
